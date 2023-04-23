@@ -1,9 +1,8 @@
+import React, { ReactNode, FC } from 'react';
+
 import Head from 'next/head';
-import React, { Fragment, ReactNode, FC } from 'react';
 
 import META from 'constants/meta';
-
-import Footer from 'components/Footer';
 
 import { styles } from '.';
 
@@ -11,11 +10,11 @@ interface Props {
   children: ReactNode;
 }
 
-const Layout: FC<Props> = (props) => {
+const ApplicationShell: FC<Props> = (props) => {
   const { children } = props;
 
   return (
-    <Fragment>
+    <>
       <Head>
         {/* Device */}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -43,10 +42,13 @@ const Layout: FC<Props> = (props) => {
         {/* Bots */}
         <meta key="robots" name="robots" content="index, follow" />
       </Head>
-      <main className={styles.container}>{children}</main>
-      <Footer />
-    </Fragment>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <main>{children}</main>
+        </div>
+      </div>
+    </>
   );
 };
 
-export default Layout;
+export default ApplicationShell;
