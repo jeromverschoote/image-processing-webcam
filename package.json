@@ -5,9 +5,9 @@
   "description": "A kit to easily build, test and deploy web applications.",
   "author": "Jerom Verschoote",
   "scripts": {
-    "dev": "next dev -p 3000",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 3001",
+    "start": "next start",
     "test": "jest --watch",
     "coverage": "jest coverage --passWithNoTests",
     "lint": "next lint"
